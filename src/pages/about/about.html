@@ -1,0 +1,59 @@
+<!--
+  Generated template for the AboutPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>About</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content parallax-header no-bounce class="bg-modal">
+    <div class="header-image"></div>
+    <div class="main-content" text-wrap text-center>
+        <div class="circular"></div>
+        <h2>{{user.name}}</h2>
+        <p>{{user.occupation}} &bull; {{user.location}}</p>
+        <p class="profile-description">{{user.description}}</p>
+        <hr>
+        <ion-list no-lines>
+            <ion-item>
+                <ion-icon name="mail" color="primary" item-start></ion-icon>
+                <p>Email</p>
+                {{user.email}}
+                <a button ion-button href="mailto:{{user.email}}" color="primary" item-end medium>Open App</a>
+            </ion-item>
+            <ion-item>
+                <ion-icon item-start name="call" color="danger"></ion-icon>
+                <p>Mobile</p>
+                {{user.phone}}
+                <a button ion-button href="tel:{{user.phone}}" color="danger" item-end medium>Poke me</a>
+            </ion-item>
+            <ion-item>
+                <ion-icon item-start name="logo-whatsapp" color="secondary"></ion-icon>
+                <p>Whatsapp</p>
+                {{user.whatsapp}}
+                <a button ion-button color="secondary" item-end medium href="whatsapp://send?text=Hi from ionic&phone=+{{user.phone}}&abid=+{{user.phone}}">Open App</a>
+            </ion-item>
+            <ion-item>
+                <ion-icon item-start name="pin" color="twitter"></ion-icon>
+                <p>{{user.address}}</p>
+            </ion-item>
+        </ion-list>
+        <h2>Social Media Connect</h2>
+        <hr>
+        <a href="#" button ion-button side="left" style="width:auto;" color="linkedin" icon-start>
+            <ion-icon name='logo-linkedin'></ion-icon>
+            LinkedIn
+        </a>
+        <a href="#" button ion-button side="right" style="width:auto;" color="danger" icon-start>
+            <ion-icon name='logo-google'></ion-icon>
+            Google
+        </a>
+    </div>
+
+</ion-content>

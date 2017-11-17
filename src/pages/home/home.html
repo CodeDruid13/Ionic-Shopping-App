@@ -1,0 +1,80 @@
+<div >
+
+    <ion-header color="personal">
+        <ion-toolbar color="personal">
+            <ion-buttons start>
+              <button ion-button icon-only>
+              <ion-icon name="ios-search-outline"></ion-icon>
+              </button>
+            </ion-buttons>
+          
+            <ion-buttons end>
+              <button ion-button icon-only>
+              <ion-icon name="ios-cart-outline"></ion-icon>
+              </button>
+            </ion-buttons>
+            </ion-toolbar>
+      </ion-header>
+
+</div>
+
+
+<ion-content padding>
+
+    <ion-slides #slider pager="true" autoplay="3000" (ionSlideWillChange)="onSlideChanged()">
+        <ion-slide *ngFor="let slide of slides"
+                   class="slide-background"
+                   [ngStyle]="{'background-image': 'url(' + slide.imageUrl +')'}">
+          <div class="text-wrapper">
+            <div class="slide-text">
+              <h2 class="slide-title" [innerHTML]="slide.title"></h2><br>
+              <p [innerHTML]="slide.description"></p>
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slides>
+
+   
+<div class="popup-menu">
+  <div class="popup-menu-overlay" [ngClass]="{'in': openMenu}" (click)="togglePopupMenu()"></div>
+  <div class="popup-menu-toggle" (click)="togglePopupMenu()" [ngClass]="{'out': openMenu}"></div>
+  <div class="popup-menu-panel" [ngClass]="{'in': openMenu}">
+    <div class="popup-menu-item" (click)="goToHome()">
+      <ion-icon name="ios-home-outline"></ion-icon>
+      <span>HOME</span>
+    </div>
+    <div class="popup-menu-item" (click)="goToOffers()">
+      <ion-icon name="ios-pricetags-outline"></ion-icon>
+      <span>OFFERS</span>
+    </div>
+    <div class="popup-menu-item" (click)="goToCart()">
+      <ion-icon name="ios-cart-outline"></ion-icon>
+      <span>MY CART</span>
+    </div>
+    <div class="popup-menu-item" (click)="goToOrders()">
+      <ion-icon name="ios-time-outline"></ion-icon>
+      <span>ORDERS</span>
+    </div>
+    <div class="popup-menu-item" (click)="goToFavorites()">
+      <ion-icon name="ios-star-outline"></ion-icon>
+      <span>WISHLIST</span>
+    </div>
+    <div class="popup-menu-item" (click)="goToSettings()">
+      <ion-icon name="ios-settings-outline"></ion-icon>
+      <span>SETTINGS</span>
+    </div>
+    <div class="popup-menu-item" (click)="goToSupport()">
+      <ion-icon name="ios-help-circle-outline"></ion-icon>
+      <span>SUPPORT</span>
+    </div>
+    <div class="popup-menu-item" (click)="goToAbout()">
+      <ion-icon name="ios-alert-outline"></ion-icon>
+      <span>ABOUT</span>
+    </div>
+    <div class="popup-menu-item" (click)="goToLogin()">
+      <ion-icon name="ios-exit-outline"></ion-icon>
+      <span>lOGOUT</span>
+    </div>
+  </div>
+</div>
+</ion-content>

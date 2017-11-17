@@ -1,0 +1,86 @@
+<!--
+  Generated template for the SettingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="personal">
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-list>
+      <ion-item>
+        <ion-icon name="ios-alert-outline" item-start color="primary"></ion-icon>
+        <ion-label>Receive alerts</ion-label>
+        <ion-toggle color="secondary"></ion-toggle>
+      </ion-item>
+      <button ion-item>
+        <ion-icon name="ios-apps-outline" item-start color="primary"></ion-icon>
+        <ion-label>Share App</ion-label>
+        <ion-note item-end>The Interwebz</ion-note>
+      </button>
+    </ion-list>
+
+   
+
+    <ion-list no-border>
+        <ion-list-header>
+          General
+        </ion-list-header>
+        <ion-item>
+          <ion-icon name='settings' item-start></ion-icon>
+          <ion-label>App Language</ion-label>
+          <ion-select [(ngModel)]="language">
+            <ion-option *ngFor="let language of languages" [value]="language">{{language}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-icon name='card' item-start></ion-icon>
+            <ion-label>Payment Method</ion-label>
+            <ion-select [(ngModel)]="paymentMethod">
+              <ion-option *ngFor="let method of paymentMethods" [value]="method">{{method}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-icon name='logo-usd' item-start></ion-icon>
+            <ion-label>Currency</ion-label>
+            <ion-select [(ngModel)]="currency">
+              <ion-option *ngFor="let currency of currencies" [value]="currency">{{currency}}</ion-option>
+            </ion-select>
+          </ion-item>
+      </ion-list>
+
+      <button ion-button full color="secondary" (click)="savesettings()" >
+          Save
+     </button>
+      
+    <ion-list>
+      <ion-list-header>
+        Account settings
+      </ion-list-header>
+      <button ion-button block outline (click)="openHintModal()">Account Profile</button>
+      
+    </ion-list>
+    <ion-list>
+      <ion-list-header>
+        Support
+      </ion-list-header>
+
+      <button ion-item>
+          <ion-icon name="ios-bug-outline" item-start color="secondary"></ion-icon>
+          <ion-label>Report a problem</ion-label>
+        </button>
+
+        <button ion-item>
+            <ion-icon name="ios-albums-outline" item-start color="secondary"></ion-icon>
+            <ion-label>Privacy Policy</ion-label>
+          </button>
+     
+    </ion-list>
+  </ion-content>
+  

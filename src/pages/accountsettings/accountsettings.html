@@ -1,0 +1,93 @@
+
+
+  <div class="topbar">
+      <ion-header>
+      <ion-navbar color="personal">
+          <ion-title>Account Settings</ion-title>
+          <ion-buttons end>
+            <button ion-button icon-only>
+            <ion-icon name='person'></ion-icon>
+          </button>
+          </ion-buttons>
+        </ion-navbar>
+
+      </ion-header>
+
+      <ion-content padding class="modal">
+          
+          <ion-row>
+              <ion-col>
+                <img class="logo" src="assets/logo/obare.png" />
+              </ion-col>
+            </ion-row>
+
+            <form [formGroup]="slideOneForm">
+
+                <ion-row>
+                    <ion-col>
+                      <ion-list inset class="no-border">
+                          <ion-row class="align-center">
+                              <ion-col col-6>
+                                  <ion-item>
+                                      <ion-label floating >First Name</ion-label>
+                                      <ion-input formControlName="firstName" type="text"></ion-input>
+                                    </ion-item>
+                              </ion-col>
+                              <ion-col col-6>
+                                  <ion-item>
+                                      <ion-label floating >Last Name</ion-label>
+                                      <ion-input formControlName="lastName" type="text"></ion-input>
+                                    </ion-item>
+                              </ion-col>
+                            </ion-row>
+                        <ion-item>
+                          <ion-label floating icon-left ><ion-icon name="ios-mail-outline"></ion-icon>Email</ion-label>
+                          <ion-input formControlName="email" type="email"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label floating icon-left><ion-icon name="ios-call-outline"></ion-icon>Phone Number</ion-label>
+                          <ion-input formControlName="number" type="number" type="number"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label floating icon-left><ion-icon name="ios-lock-outline"></ion-icon>Password</ion-label>
+                            <ion-input type="password"></ion-input>
+                          </ion-item>
+                          <ion-item>
+                              <ion-label floating icon-left><ion-icon name="ios-lock-outline"></ion-icon>Repeat Password</ion-label>
+                              <ion-input type="password"></ion-input>
+                            </ion-item>
+                      </ion-list>
+                    </ion-col>
+                  </ion-row>
+
+            </form>
+         
+            
+            </ion-content>
+           
+            <ion-footer >
+
+              <div class="footerbtn">
+
+                  <ion-row class="align-center">
+                      <ion-col col-6>
+                        <button ion-button full color="secondary" (click)="save()" >
+                             Save
+                        </button>
+                      </ion-col>
+                      <ion-col col-6>
+                        <button ion-button full color="personal" (click)="dismiss()" >   
+                              Dismiss
+                        </button>
+                      </ion-col>
+                    </ion-row>
+                  
+
+              </div>
+               
+
+            </ion-footer>
+    </div>
+    
+ 
+  
